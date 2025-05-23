@@ -1,7 +1,5 @@
 package usantatecla.movies.v25;
 
-import usantatecla.movies.v22.Movie;
-
 public class Rental {
 
 	private Movie movie;

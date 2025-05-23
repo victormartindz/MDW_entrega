@@ -1,14 +1,11 @@
 package usantatecla.movies.v24;
 
-import usantatecla.movies.v22.Movie;
-
 public class Rental {
-
-	private usantatecla.movies.v22.Movie movie;
 	
 	private int daysRented;
-	
-	public Rental(usantatecla.movies.v22.Movie movie, int daysRented) {
+	private Movie movie;
+
+	public Rental(Movie movie, int daysRented) {
 		this.movie = movie;
 		this.daysRented = daysRented;
 	}
