@@ -1,7 +1,6 @@
 package usantatecla.movies.v22;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Customer {
@@ -24,10 +23,8 @@ public class Customer {
 	}
 
 	public String statement() {
-		Iterator<Rental> rentals = this.rentals.iterator();
 		String result = "Rental Record for " + this.getName() + "\n";
-		while (rentals.hasNext()) {
-			Rental each = rentals.next();
+		for (Rental each : rentals) {
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
 		}
 		result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
@@ -37,9 +34,7 @@ public class Customer {
 
 	private double getTotalCharge() {
 		double result = 0;
-		Iterator<Rental> rentals = this.rentals.iterator();
-		while (rentals.hasNext()) {
-			Rental each = rentals.next();
+		for (Rental each : this.rentals) {
 			result += each.getCharge();
 		}
 		return result;
@@ -47,9 +42,7 @@ public class Customer {
 
 	private int getTotalFrequentRenterPoints() {
 		int result = 0;
-		Iterator<Rental> rentals = this.rentals.iterator();
-		while (rentals.hasNext()) {
-			Rental each = rentals.next();
+		for (Rental each : this.rentals) {
 			result += each.getFrequentRenterPoints();
 		}
 		return result;
