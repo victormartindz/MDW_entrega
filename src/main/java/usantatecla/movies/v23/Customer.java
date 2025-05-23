@@ -25,7 +25,7 @@ public class Customer {
 	public String statement() {
 		String result = "Rental Record for " + this.getName() + "\n";
 		for (Rental each : rentals) {
-			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
+			result += "\t" + each.getMovieTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
 		}
 		result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
 		result += "You earned " + String.valueOf(this.getTotalFrequentRenterPoints()) + " frequent renter points";
